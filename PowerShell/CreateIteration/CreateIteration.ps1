@@ -1,5 +1,6 @@
-﻿Param
+Param
 (
+    [string]$PAT,
     [string]$Organization,
     [string]$Project,
     [string]$TeamName,
@@ -7,6 +8,7 @@
     [int]$NumberOfSprints
 )
 
+echo $PAT | az devops login --org $Organization
 
 Write-Host '===Configuring connection to organization and Team Project'
 az devops configure --defaults organization=$Organization project=$Project
